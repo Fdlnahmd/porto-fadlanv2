@@ -1,0 +1,168 @@
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Terminal } from 'lucide-react';
+
+const navItems = [
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Contact', href: '#contact' }
+];
+
+const Navbar = () => {
+  const [activeSection, setActiveSection] = useState('home');
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Monitor scroll for nav styling and active section tracking
+  useEffect(() => {
+    const handleScroll = () => {
+      // Background styling toggle
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+
+      // Track active section
+      const scrollPosition = window.scrollY + 150; // Offset for trigger point
+      
+      for (const item of navItems) {
+        const element = document.querySelector(item.href);
+        if (element) {
+          const top = element.offsetTop;
+          const height = element.offsetHeight;
+          
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(item.href.slice(1));
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Handle smooth scroll clicks
+  const handleClick = (e, href) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      const offset = 80; // height of navbar
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
+    <>
+      <motion.nav 
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled 
+            ? 'glassmorphism-nav py-3' 
+            : 'bg-transparent py-5'
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+          {/* Logo */}
+          <a 
+            href="#home" 
+            onClick={(e) => handleClick(e, '#home')}
+            className="flex items-center gap-2 font-display text-xl font-bold tracking-tight text-white group"
+          >
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-accent-indigo to-accent-violet flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+              <Terminal size={16} />
+            </div>
+            <span>Fadlan<span className="text-accent-indigo text-glow-violet">.</span></span>
+          </a>
+
+          {/* Desktop Nav Items */}
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.slice(1);
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleClick(e, item.href)}
+                  className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
+                    isActive ? 'text-white' : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  {/* Sliding Background Pill */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNavPill"
+                      className="absolute inset-0 bg-white/5 rounded-full border border-white/5 -z-10"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  {item.name}
+                </a>
+              );
+            })}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </motion.nav>
+
+      {/* Mobile Drawer Navigation */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-x-0 top-[60px] z-45 md:hidden glassmorphism border-b border-white/5 shadow-2xl overflow-hidden"
+          >
+            <div className="flex flex-col px-6 py-4 gap-2">
+              {navItems.map((item) => {
+                const isActive = activeSection === item.href.slice(1);
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => handleClick(e, item.href)}
+                    className={`px-4 py-3 rounded-lg text-base font-medium tracking-wide flex items-center transition-all duration-200 ${
+                      isActive 
+                        ? 'bg-gradient-to-r from-accent-indigo/25 to-accent-violet/10 text-white border-l-2 border-accent-indigo pl-3' 
+                        : 'text-gray-400 hover:text-white hover:bg-white/5 pl-4'
+                    }`}
+                  >
+                    {item.name}
+                  </a>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default Navbar;

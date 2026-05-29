@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+  
+  --color-dark-bg: #030712;
+  --color-dark-card: rgba(15, 23, 42, 0.4);
+  --color-accent-violet: #8b5cf6;
+  --color-accent-indigo: #6366f1;
+  --color-accent-teal: #0d9488;
+  --color-accent-emerald: #10b981;
+}
+
+/* Smooth Scrolling & Custom Globals */
+html {
+  scroll-behavior: smooth;
+  background-color: #030712;
+  color: #f3f4f6;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+  color: #ffffff;
+}
+
+/* Utilities for glassmorphism and glows */
+.glassmorphism {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glassmorphism-nav {
+  background: rgba(3, 7, 18, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.text-glow-violet {
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+}
+
+.text-glow-teal {
+  text-shadow: 0 0 15px rgba(13, 148, 136, 0.5);
+}
+
+.glow-card:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Parallax pulsing aurora lights */
+@keyframes aurora-1 {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes aurora-2 {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-40px, 40px) scale(1.15); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-aurora-1 {
+  animation: aurora-1 25s infinite alternate ease-in-out;
+}
+
+.animate-aurora-2 {
+  animation: aurora-2 30s infinite alternate ease-in-out;
+}
+
+/* Typewriter cursor blink */
+@keyframes blink {
+  0%, 100% { border-color: #6366f1; }
+  50% { border-color: transparent; }
+}
+
