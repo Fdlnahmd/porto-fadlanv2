@@ -7,7 +7,7 @@
     <meta name="description" content="Portofolio resmi Fadlan Achmad Frizal - Fullstack Developer, NOC Staff, dan Social Media Support. Lulusan SMK Telkom Jakarta & Mahasiswa Sistem Informasi Esa Unggul." />
     <meta name="keywords" content="Fadlan Achmad Frizal, Portofolio, Fullstack Developer, DevOps, NOC Staff, Media Support, SMK Telkom, Esa Unggul" />
     <meta name="author" content="Fadlan Achmad Frizal" />
-    <meta name="theme-color" content="#030712" />
+    <meta name="theme-color" content="#0f172a" />
     
     <!-- Open Graph / Social Medias -->
     <meta property="og:type" content="website" />
@@ -15,6 +15,16 @@
     <meta property="og:description" content="Jelajahi karya terbaik, keahlian dev, monitoring jaringan NOC, dan produksi media kreatif Fadlan Achmad Frizal." />
     
     <title>Fadlan Achmad Frizal | Portfolio</title>
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body class="bg-dark-bg selection:bg-accent-indigo/30 selection:text-white">
     <div id="root"></div>

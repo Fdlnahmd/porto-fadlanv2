@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Terminal } from 'lucide-react';
+import { Menu, X, Terminal, Sun, Moon } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', href: '#home' },
@@ -11,10 +11,32 @@ const navItems = [
   { name: 'Contact', href: '#contact' }
 ];
 
+// Navbar with theme toggler
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 'dark';
+    }
+    return 'dark';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      root.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   // Monitor scroll for nav styling and active section tracking
   useEffect(() => {
@@ -92,40 +114,66 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Nav Items */}
-          <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.href.slice(1);
-              return (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => handleClick(e, item.href)}
-                  className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
-                    isActive ? 'text-white' : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  {/* Sliding Background Pill */}
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeNavPill"
-                      className="absolute inset-0 bg-white/5 rounded-full border border-white/5 -z-10"
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                  {item.name}
-                </a>
-              );
-            })}
+          <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-center gap-1">
+              {navItems.map((item) => {
+                const isActive = activeSection === item.href.slice(1);
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => handleClick(e, item.href)}
+                    className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
+                      isActive ? 'text-white' : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    {/* Sliding Background Pill */}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeNavPill"
+                        className="absolute inset-0 bg-white/5 rounded-full border border-white/5 -z-10"
+                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                    {item.name}
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Vertical Divider */}
+            <div className="h-5 w-[1px] bg-white/10" />
+
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 text-gray-400 hover:text-white transition-all duration-300 focus:outline-none flex items-center justify-center cursor-pointer"
+              aria-label="Toggle Theme"
+            >
+              {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none"
-            aria-label="Toggle Menu"
-          >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* Mobile Actions Container */}
+          <div className="flex md:hidden items-center gap-2">
+            {/* Theme Toggle Button Mobile */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none flex items-center justify-center cursor-pointer"
+              aria-label="Toggle Theme"
+            >
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none"
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </motion.nav>
 
