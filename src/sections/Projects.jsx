@@ -16,7 +16,7 @@ const projects = [
     desc: 'Platform terintegrasi untuk pemesanan dan penyewaan ruang kantor, ruang pertemuan, dan coworking space premium di gedung pencakar langit ikonik Wisma 46 Kota BNI Jakarta.',
     image: folio6,
     category: 'fullstack',
-    tags: ['React.js (Vite)', 'Laravel 11 API', 'MySQL', 'Docker', 'Grafana', 'GitHub Actions', 'Midtrans Payment Gateway'],
+    tags: ['React.js (Vite)', 'Laravel 11 API', 'MySQL', 'Docker', 'Grafana', 'GitHub Actions', 'Midtrans Payment Gateway','Ai Integration (Llama + Groq'],
     demoLink: 'https://w46space.nexvol.xyz/'
   },
   {
