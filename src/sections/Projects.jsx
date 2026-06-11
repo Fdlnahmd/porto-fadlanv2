@@ -31,7 +31,7 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Five Star Hainanese Kampung Chicken Rice',
+    title: 'Restaurant Franchise Platform',
     desc: 'Platform web kuliner premium bertema Hainanese Kampung Chicken Rice autentik. Menyajikan navigasi menu berstruktur, portal kemitraan waralaba, serta antarmuka pelanggan yang modern.',
     image: folio5,
     category: 'fullstack',
