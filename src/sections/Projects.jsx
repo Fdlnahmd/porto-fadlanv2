@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ExternalLink, FolderGit2, Play, ArrowUpRight } from 'lucide-react';
 
 import folio6 from '../assets/folio-6.png';
+import folio7 from '../assets/folio-7.png';
 import folio5 from '../assets/folio-5.png';
 import folio1 from '../assets/folio-1.png';
 import folio3 from '../assets/folio-3.png';
@@ -16,11 +17,20 @@ const projects = [
     desc: 'Platform terintegrasi untuk pemesanan dan penyewaan ruang kantor, ruang pertemuan, dan coworking space premium di gedung pencakar langit ikonik Wisma 46 Kota BNI Jakarta.',
     image: folio6,
     category: 'fullstack',
-    tags: ['React.js (Vite)', 'Laravel 11 API', 'MySQL', 'Docker', 'Grafana', 'GitHub Actions', 'Midtrans Payment Gateway','Ai Integration (Llama + Groq'],
+    tags: ['React.js (Vite)', 'Laravel 11 API', 'MySQL', 'Docker', 'Grafana', 'GitHub Actions', 'Midtrans Payment Gateway', 'AI Integration (Llama + Groq)'],
     demoLink: 'https://w46space.nexvol.xyz/'
   },
   {
     id: 2,
+    title: 'Astra Corporation: Corporate Landing Page',
+    desc: 'Landing page premium dan interaktif untuk Astra Corporation. Menampilkan profil perusahaan, tata kelola, lini bisnis utama, serta desain antarmuka modern yang responsif dan elegan.',
+    image: folio7,
+    category: 'frontend',
+    tags: ['React.js (Vite)', 'Tailwind CSS', 'Framer Motion', 'Docker'],
+    demoLink: 'https://astracorp.nexvol.xyz/'
+  },
+  {
+    id: 3,
     title: 'Five Star Hainanese Kampung Chicken Rice',
     desc: 'Platform web kuliner premium bertema Hainanese Kampung Chicken Rice autentik. Menyajikan navigasi menu berstruktur, portal kemitraan waralaba, serta antarmuka pelanggan yang modern.',
     image: folio5,
@@ -29,7 +39,7 @@ const projects = [
     demoLink: 'https://fiverestaurant.nexvol.xyz/'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Nunggu Sunset — Luna Maya Google Challenge',
     desc: 'Konten Instagram Reel berdurasi pendek yang dibuat untuk program Google Challenge. Menampilkan Luna Maya dalam sesi kreatif bertema nunggu sunset yang diproduksi di Media Indonesia.',
     image: folio1,
@@ -38,7 +48,7 @@ const projects = [
     demoLink: 'https://www.instagram.com/reel/Cv9EfbQsBPj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
   },
   {
-    id: 4,
+    id: 5,
     title: 'Executive Forum — Kesehatan & Kemiskinan',
     desc: 'Produksi live streaming acara Executive Forum Media Indonesia bertema "Kesehatan dan Kemiskinan PR Kita Bersama". Bertanggung jawab atas teknis kamera, audio, dan pengelolaan siaran langsung di YouTube.',
     image: folio3,
@@ -47,7 +57,7 @@ const projects = [
     demoLink: 'https://www.youtube.com/live/gf3mtQdEpZk?si=UJJZ43e0K3q3RlHS'
   },
   {
-    id: 5,
+    id: 6,
     title: 'Nunggu Sunset — Reuni Sherina & Sadam',
     desc: 'Produksi video konten YouTube Media Indonesia: episode reuni persahabatan Sherina dan Sadam. Bertanggung jawab atas pengambilan gambar, lighting tungsten, dan pengeditan akhir.',
     image: folio4,
@@ -56,7 +66,7 @@ const projects = [
     demoLink: 'https://youtu.be/VRLh5n1AC9U?si=g-ZmKfPgDBsj8OY3'
   },
   {
-    id: 6,
+    id: 7,
     title: 'TrackInMI — Program Wawancara Media Indonesia',
     desc: 'Program wawancara eksklusif Media Indonesia di mana saya berperan sebagai pewawancara. Menggali kisah inspiratif dari narasumber terpilih dalam format Instagram Reel.',
     image: folio2,
@@ -70,6 +80,7 @@ const projects = [
 const categories = [
   { id: 'all', name: 'Semua Proyek' },
   { id: 'fullstack', name: 'Fullstack Web' },
+  { id: 'frontend', name: 'Frontend Web' },
   { id: 'media', name: 'Media & Konten' }
 ];
 
