@@ -13,7 +13,7 @@ import folio2 from '../assets/folio-2.png';
 const projects = [
   {
     id: 1,
-    title: 'Wisma 46 Space: Premium Office Booking',
+    title: 'Premium Office Booking',
     desc: 'Platform terintegrasi untuk pemesanan dan penyewaan ruang kantor, ruang pertemuan, dan coworking space premium di gedung pencakar langit ikonik Wisma 46 Kota BNI Jakarta.',
     image: folio6,
     category: 'fullstack',
@@ -22,7 +22,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Astra Corporation: Corporate Landing Page',
+    title: 'Corporate Landing Page',
     desc: 'Landing page premium dan interaktif untuk Astra Corporation. Menampilkan profil perusahaan, tata kelola, lini bisnis utama, serta desain antarmuka modern yang responsif dan elegan.',
     image: folio7,
     category: 'frontend',
