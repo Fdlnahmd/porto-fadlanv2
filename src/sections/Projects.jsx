@@ -9,6 +9,7 @@ import folio1 from '../assets/folio-1.png';
 import folio3 from '../assets/folio-3.png';
 import folio4 from '../assets/folio-4.jpg';
 import folio2 from '../assets/folio-2.png';
+import folio8 from '../assets/folio-8.png';
 
 const projects = [
   {
@@ -22,6 +23,15 @@ const projects = [
   },
   {
     id: 2,
+    title: 'Corporate Landing Page & Dashboard',
+    desc: 'Landing page premium dan interaktif untuk Nexus Corporation yang dilengkapi dengan dashboard admin untuk pengelolaan konten secara dinamis. Menampilkan profil perusahaan, tata kelola, dan lini bisnis utama secara responsif dan elegan.',
+    image: folio8,
+    category: 'frontend',
+    tags: ['React.js (Vite)', 'Laravel 11 API', 'CI/CD GitHub Runners', 'Tailwind CSS', 'Framer Motion', 'Docker'],
+    demoLink: 'https://nexuscorp.nexvol.xyz/'
+  },
+  {
+    id: 3,
     title: 'Corporate Landing Page',
     desc: 'Landing page premium dan interaktif untuk Astra Corporation. Menampilkan profil perusahaan, tata kelola, lini bisnis utama, serta desain antarmuka modern yang responsif dan elegan.',
     image: folio7,
@@ -30,7 +40,7 @@ const projects = [
     demoLink: 'https://astracorp.nexvol.xyz/'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Restaurant Franchise Platform',
     desc: 'Platform web kuliner premium bertema Hainanese Kampung Chicken Rice autentik. Menyajikan navigasi menu berstruktur, portal kemitraan waralaba, serta antarmuka pelanggan yang modern.',
     image: folio5,
@@ -39,7 +49,7 @@ const projects = [
     demoLink: 'https://fiverestaurant.nexvol.xyz/'
   },
   {
-    id: 4,
+    id: 5,
     title: 'Nunggu Sunset — Luna Maya Google Challenge',
     desc: 'Konten Instagram Reel berdurasi pendek yang dibuat untuk program Google Challenge. Menampilkan Luna Maya dalam sesi kreatif bertema nunggu sunset yang diproduksi di Media Indonesia.',
     image: folio1,
@@ -48,7 +58,7 @@ const projects = [
     demoLink: 'https://www.instagram.com/reel/Cv9EfbQsBPj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
   },
   {
-    id: 5,
+    id: 6,
     title: 'Executive Forum — Kesehatan & Kemiskinan',
     desc: 'Produksi live streaming acara Executive Forum Media Indonesia bertema "Kesehatan dan Kemiskinan PR Kita Bersama". Bertanggung jawab atas teknis kamera, audio, dan pengelolaan siaran langsung di YouTube.',
     image: folio3,
@@ -57,7 +67,7 @@ const projects = [
     demoLink: 'https://www.youtube.com/live/gf3mtQdEpZk?si=UJJZ43e0K3q3RlHS'
   },
   {
-    id: 6,
+    id: 7,
     title: 'Nunggu Sunset — Reuni Sherina & Sadam',
     desc: 'Produksi video konten YouTube Media Indonesia: episode reuni persahabatan Sherina dan Sadam. Bertanggung jawab atas pengambilan gambar, lighting tungsten, dan pengeditan akhir.',
     image: folio4,
@@ -66,7 +76,7 @@ const projects = [
     demoLink: 'https://youtu.be/VRLh5n1AC9U?si=g-ZmKfPgDBsj8OY3'
   },
   {
-    id: 7,
+    id: 8,
     title: 'TrackInMI — Program Wawancara Media Indonesia',
     desc: 'Program wawancara eksklusif Media Indonesia di mana saya berperan sebagai pewawancara. Menggali kisah inspiratif dari narasumber terpilih dalam format Instagram Reel.',
     image: folio2,
