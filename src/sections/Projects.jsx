@@ -24,7 +24,7 @@ const projects = [
   {
     id: 2,
     title: 'Corporate Landing Page & Dashboard',
-    desc: 'Landing page premium dan interaktif untuk Nexus Corporation yang dilengkapi dengan dashboard admin untuk pengelolaan konten secara dinamis. Menampilkan profil perusahaan, tata kelola, dan lini bisnis utama secara responsif dan elegan.',
+    desc: 'Landing page premium dan interaktif untuk Nexus Corporation yang dilengkapi dengan dashboard admin untuk pengelolaan konten secara dinamis. Menampilkan profil perusahaan, tata kelola, dan lini bisnis utama secara responsif dan elegan.(Jika ingin masuk Dashboard, tambahkan /admin/login di url nya',
     image: folio8,
     category: 'fullstack',
     tags: ['React.js (Vite)', 'Laravel 11 API', 'CI/CD GitHub Runners', 'Tailwind CSS', 'Framer Motion', 'Docker'],
