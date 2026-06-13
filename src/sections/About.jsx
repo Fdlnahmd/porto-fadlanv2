@@ -61,7 +61,7 @@ const About = () => {
           
           <div className="space-y-4 text-gray-400 text-sm sm:text-base leading-relaxed">
             <p>
-              Saya adalah fresh graduate <strong className="text-white">Rekayasa Perangkat Lunak (RPL)</strong> dari <strong className="text-white">SMK Telkom Shandy Putra Jakarta</strong> dan saat ini sedang menempuh pendidikan S1 Sistem Informasi di <strong className="text-white">Universitas Esa Unggul</strong>.
+              Saya adalah Alumni <strong className="text-white">Rekayasa Perangkat Lunak (RPL)</strong> dari <strong className="text-white">SMK Telkom Shandy Putra Jakarta</strong> dan saat ini sedang menempuh pendidikan S1 Sistem Informasi di <strong className="text-white">Universitas Esa Unggul</strong>.
             </p>
             <p>
               Saya suka mencari tantangan baru dan memecahkan masalah untuk meningkatkan kemampuan diri. Memiliki minat mendalam pada <strong className="text-white">Problem Solving</strong>, coding, serta pembuatan website statis maupun dinamis. Saya selalu mencari peluang untuk berkembang menjadi tenaga profesional yang cerdas, yang terus mengasah soft skills maupun hard skills.
