@@ -7,6 +7,7 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   // Live input validations
   const validateForm = () => {
@@ -40,18 +41,43 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    
-    // Simulate API request to backend (1.5 seconds)
-    setTimeout(() => {
+    setSubmitError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'ae8b9891-3542-47bf-ae76-d6504f862096', // Web3Forms Access Key
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `Pesan Baru Portofolio dari ${formData.name}`,
+          from_name: 'Portofolio Fadlan'
+        })
+      });
+
+      const resData = await response.json();
+
+      if (resData.success) {
+        setShowSuccessModal(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitError(resData.message || 'Gagal mengirim pesan. Silakan coba lagi.');
+      }
+    } catch {
+      setSubmitError('Koneksi internet bermasalah. Silakan coba beberapa saat lagi.');
+    } finally {
       setIsSubmitting(false);
-      setShowSuccessModal(true);
-      setFormData({ name: '', email: '', message: '' }); // reset form
-    }, 1500);
+    }
   };
 
   return (
@@ -235,6 +261,14 @@ const Contact = () => {
               )}
             </div>
 
+            {/* Submission Error Alert */}
+            {submitError && (
+              <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs flex items-center gap-2 font-medium">
+                <AlertCircle size={14} />
+                <span>{submitError}</span>
+              </div>
+            )}
+
             {/* Submit Button */}
             <button
               type="submit"
@@ -277,7 +311,7 @@ const Contact = () => {
               </div>
               <h3 className="font-display text-2xl font-bold text-white mb-2">Pesan Terkirim!</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Terima kasih telah menghubungi saya. Pesan simulasi Anda telah berhasil disimpan di memori browser. Saya akan segera membalasnya secepat mungkin!
+                Terima kasih telah menghubungi saya. Pesan Anda telah berhasil dikirim ke email saya. Saya akan segera merespons Anda secepat mungkin!
               </p>
               <button
                 onClick={() => setShowSuccessModal(false)}
