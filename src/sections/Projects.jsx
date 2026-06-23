@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ExternalLink, FolderGit2, Play, ArrowUpRight } from 'lucide-react';
 
-import folio6 from '../assets/folio-6.png';
-import folio7 from '../assets/folio-7.png';
-import folio5 from '../assets/folio-5.png';
-import folio1 from '../assets/folio-1.png';
-import folio3 from '../assets/folio-3.png';
-import folio4 from '../assets/folio-4.jpg';
-import folio2 from '../assets/folio-2.png';
-import folio8 from '../assets/folio-8.png';
+import folio6 from '../assets/folio-6.webp';
+import folio7 from '../assets/folio-7.webp';
+import folio5 from '../assets/folio-5.webp';
+import folio1 from '../assets/folio-1.webp';
+import folio3 from '../assets/folio-3.webp';
+import folio4 from '../assets/folio-4.webp';
+import folio2 from '../assets/folio-2.webp';
+import folio8 from '../assets/folio-8.webp';
 
 const projects = [
   {
@@ -205,6 +205,7 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 ) : (
