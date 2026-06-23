@@ -32,12 +32,12 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Corporate Landing Page',
-    desc: 'Landing page premium dan interaktif untuk Astra Corporation. Menampilkan profil perusahaan, tata kelola, lini bisnis utama, serta desain antarmuka modern yang responsif dan elegan.',
+    title: 'Jasa Servis Mobil Profesional',
+    desc: 'Landing page modern untuk bisnis jasa service mobil profesional AutoPro. Dirancang dengan desain responsive mobile-first, form booking terintegrasi WhatsApp, FAQ interaktif, dan visualisasi detail layanan.',
     image: folio7,
     category: 'frontend',
-    tags: ['React.js (Vite)', 'Tailwind CSS', 'Framer Motion', 'Docker'],
-    demoLink: 'https://astracorp.nexvol.xyz/'
+    tags: ['React.js (Vite)', 'Tailwind CSS v4', 'Cloudflare Tunnel', 'Docker', 'Nginx'],
+    demoLink: 'https://autopro.nexvol.xyz/'
   },
   {
     id: 4,
