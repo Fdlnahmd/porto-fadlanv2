@@ -229,7 +229,7 @@ const Hero = () => {
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
             </button>
             <a
-              href="https://drive.google.com/uc?export=download&id=1JH3Om1sj4DK-4650DsKIGOlXu8LR59jk"
+              href="https://drive.google.com/uc?export=download&id=1VBUBvgj0pc65mPP8qDx3Awo2GMyDtk0j"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-3.5 rounded-xl glassmorphism hover:bg-white/5 hover:border-white/10 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5"

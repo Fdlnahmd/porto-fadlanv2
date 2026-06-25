@@ -155,7 +155,7 @@ const Skills = () => {
             <h3 className="font-display text-base font-bold text-white mb-4">Kemampuan Personal (Soft Skills)</h3>
             <div className="flex flex-wrap gap-2.5">
               {[
-                'Komunikasi', 'Team Work', 'Teliti', 'Mampu Bekerja di bawah Tekanan',
+                'Komunikasi', 'Team Work', 'Teliti',
                 'Mudah Beradaptasi', 'Loyalitas', 'Manajemen Waktu', 'Bertanggung Jawab'
               ].map((skill) => (
                 <span

@@ -24,11 +24,12 @@ const projects = [
   {
     id: 2,
     title: 'Corporate Landing Page & Dashboard',
-    desc: 'Landing page premium dan interaktif untuk Nexus Corporation yang dilengkapi dengan dashboard admin untuk pengelolaan konten secara dinamis. Menampilkan profil perusahaan, tata kelola, dan lini bisnis utama secara responsif dan elegan.(Jika ingin masuk Dashboard, tambahkan /admin/login di url nya',
+    desc: 'Landing page premium dan interaktif untuk Nexus Corporation yang dilengkapi dengan dashboard admin untuk pengelolaan konten secara dinamis. Menampilkan profil perusahaan, tata kelola, dan lini bisnis utama secara responsif dan elegan.',
     image: folio8,
     category: 'fullstack',
     tags: ['React.js (Vite)', 'Laravel 11 API', 'CI/CD GitHub Runners', 'Tailwind CSS', 'Framer Motion', 'Docker'],
-    demoLink: 'https://nexuscorp.nexvol.xyz/'
+    demoLink: 'https://nexuscorp.nexvol.xyz/',
+    dashboardLink: 'https://nexuscorp.nexvol.xyz/admin/login'
   },
   {
     id: 3,
@@ -261,26 +262,65 @@ const Projects = () => {
                   {/* Actions Links */}
                   {/* Action Button */}
                   <div className="pt-4 border-t border-white/5">
-                    <a
-                      href={project.demoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/btn w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-accent-indigo/20 hover:to-accent-teal/10 border border-white/5 hover:border-accent-indigo/30 transition-all duration-300"
-                    >
-                      <div className="flex items-center gap-2">
-                        {project.category === 'media'
-                          ? <Play size={14} className="text-accent-teal" />
-                          : <ExternalLink size={14} className="text-accent-indigo" />
-                        }
-                        <span className="text-xs font-semibold text-gray-300 group-hover/btn:text-white transition-colors duration-200">
-                          {project.category === 'media' ? 'Tonton Konten' : 'Kunjungi Proyek'}
-                        </span>
+                    {project.dashboardLink ? (
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <a
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/btn flex-1 flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-accent-indigo/20 hover:to-accent-teal/10 border border-white/5 hover:border-accent-indigo/30 transition-all duration-300"
+                        >
+                          <div className="flex items-center gap-2">
+                            <ExternalLink size={14} className="text-accent-indigo" />
+                            <span className="text-xs font-semibold text-gray-300 group-hover/btn:text-white transition-colors duration-200">
+                              Kunjungi Website
+                            </span>
+                          </div>
+                          <ArrowUpRight
+                            size={14}
+                            className="text-gray-500 group-hover/btn:text-accent-teal group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all duration-200"
+                          />
+                        </a>
+                        <a
+                          href={project.dashboardLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/btn flex-1 flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-accent-indigo/20 hover:to-accent-teal/10 border border-white/5 hover:border-accent-indigo/30 transition-all duration-300"
+                        >
+                          <div className="flex items-center gap-2">
+                            <ExternalLink size={14} className="text-accent-teal" />
+                            <span className="text-xs font-semibold text-gray-300 group-hover/btn:text-white transition-colors duration-200">
+                              Dashboard Admin
+                            </span>
+                          </div>
+                          <ArrowUpRight
+                            size={14}
+                            className="text-gray-500 group-hover/btn:text-accent-teal group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all duration-200"
+                          />
+                        </a>
                       </div>
-                      <ArrowUpRight
-                        size={14}
-                        className="text-gray-500 group-hover/btn:text-accent-teal group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all duration-200"
-                      />
-                    </a>
+                    ) : (
+                      <a
+                        href={project.demoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-accent-indigo/20 hover:to-accent-teal/10 border border-white/5 hover:border-accent-indigo/30 transition-all duration-300"
+                      >
+                        <div className="flex items-center gap-2">
+                          {project.category === 'media'
+                            ? <Play size={14} className="text-accent-teal" />
+                            : <ExternalLink size={14} className="text-accent-indigo" />
+                          }
+                          <span className="text-xs font-semibold text-gray-300 group-hover/btn:text-white transition-colors duration-200">
+                            {project.category === 'media' ? 'Tonton Konten' : 'Kunjungi Proyek'}
+                          </span>
+                        </div>
+                        <ArrowUpRight
+                          size={14}
+                          className="text-gray-500 group-hover/btn:text-accent-teal group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all duration-200"
+                        />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
