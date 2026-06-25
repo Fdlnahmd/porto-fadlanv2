@@ -10,13 +10,13 @@ const timelineData = [
     company: 'PT Mitra Teknologi Andalan Utama',
     duration: 'Juli 2025 — Sekarang',
     bullets: [
-      'Melakukan Monitoring Network di Polestar, Unifi dan VManage SD-Wan',
-      'Melakukan First Handling saat menerima laporan gangguan',
-      'Melakukan Pengecekan dan Troubleshooting melalui Putty dan Winbox',
-      'Membuat Tiket dan Email terkait laporan gangguan yang di terima',
-      'Menjadi Helpdesk terkait aduan gangguan pada Network tertentu',
-      'Melakukan Preventive Maintenance pada Network SD WAN',
-      'Melakukan Support untuk Tim Lapangan saat Visit'
+      'Memantau kestabilan jaringan menggunakan Polestar, UniFi, dan Cisco vManage SD-WAN.',
+      'Menangani kendala awal (first handling) pada laporan gangguan sistem yang masuk.',
+      'Mendiagnosis & melakukan troubleshoot konfigurasi jaringan menggunakan PuTTY dan Winbox.',
+      'Mengelola dokumentasi tiket gangguan (trouble ticket) dan laporan eskalasi email.',
+      'Melayani aduan teknis pelanggan terkait laporan gangguan jaringan tertentu.',
+      'Melaksanakan pemeliharaan berkala (preventive maintenance) pada jaringan SD-WAN.',
+      'Memberikan dukungan teknis jarak jauh (remote support) untuk tim lapangan di lokasi.'
     ],
     icon: <Briefcase className="text-accent-teal" size={16} />
   },
@@ -27,13 +27,13 @@ const timelineData = [
     company: 'Media Indonesia',
     duration: 'Juli 2023 — Desember 2023',
     bullets: [
-      'Membuat Infografis untuk Media Sosial Media Indonesia',
-      'Mengupload Berita di LinkedIn Media Indonesia',
-      'Menjadi Crew Set Up dan Video Editor di Program MICOM Update',
-      'Menjadi Cameraman dan Wartawan di Program TrackInMI',
-      'Menjadi Crew Set Up dan Cameraman di Program Nunggu Sunset',
-      'Menjadi Crew Set Up dan Cameraman di Festival Setara & Berdaya dan Executive Forum',
-      'Menjadi Crew Set Up, Cameraman dan Video Editor di Short Video trivia 17 Agustus 2023'
+      'Membuat konten infografis informatif untuk media sosial resmi perusahaan.',
+      'Mengupload Berita di LinkedIn Media IndonesiaMengelola publikasi berita harian di platform LinkedIn Media Indonesia.',
+      'Mengoperasikan peralatan studio & editing video pada program "MICOM Update".',
+      'Mengambil gambar (kamera) & meliput berita sebagai jurnalis program "TrackInMI".',
+      'Menyiapkan instalasi teknis studio & mengoperasikan kamera program "Nunggu Sunset".',
+      'Mengatur set-up peralatan teknis & penataan kamera pada event skala besar.',
+      'Mengoordinasikan proses set-up, pengambilan gambar, & editing video trivia pendek.'
     ],
     icon: <Briefcase className="text-accent-indigo" size={16} />
   },
@@ -119,7 +119,7 @@ const Experience = () => {
                   ? 'bg-accent-teal/10 text-accent-teal' 
                   : 'bg-accent-violet/10 text-accent-violet'
               }`}>
-                {item.type === 'work' ? 'Pekerjaan' : 'Pendidikan'}
+                {item.type === 'work' ? 'Magang' : 'Pendidikan'}
               </span>
 
               {/* Title & Role Info */}
