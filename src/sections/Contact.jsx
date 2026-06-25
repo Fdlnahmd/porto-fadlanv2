@@ -152,7 +152,7 @@ const Contact = () => {
                 <div>
                   <span className="text-[10px] text-gray-500 uppercase tracking-wider block font-bold">Lokasi</span>
                   <span className="text-xs sm:text-sm text-white">
-                    Jl. Anggrek Rosliana FII, Slipi,<br />Palmerah, Jakarta Barat
+                    Jakarta Barat,<br />DKI Jakarta
                   </span>
                 </div>
               </div>
