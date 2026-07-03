@@ -127,7 +127,7 @@ const Contact = () => {
         >
           <div>
             <h3 className="font-display text-xl font-bold text-white mb-3">Informasi Kontak</h3>
-            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-8">
+            <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-8">
               Punya ide menarik atau tawaran kerja sama? Silakan kirim pesan Anda, saya akan merespons pesan Anda secepat mungkin.
             </p>
 
@@ -310,7 +310,7 @@ const Contact = () => {
                 <CheckCircle size={32} />
               </div>
               <h3 className="font-display text-2xl font-bold text-white mb-2">Pesan Terkirim!</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              <p className="text-gray-300 text-sm leading-relaxed mb-6">
                 Terima kasih telah menghubungi saya. Pesan Anda telah berhasil dikirim ke email saya. Saya akan segera merespons Anda secepat mungkin!
               </p>
               <button

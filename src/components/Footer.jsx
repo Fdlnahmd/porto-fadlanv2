@@ -24,7 +24,7 @@ const Footer = () => {
           Fadlan<span className="text-accent-indigo">.</span>
           </div>
           <p className="text-gray-500 text-xs mt-1">
-            Web Developer & NOC Specialist — Jakarta Barat.
+            Web Developer & NOC — Jakarta Barat.
           </p>
         </div>
 

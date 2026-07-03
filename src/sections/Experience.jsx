@@ -22,6 +22,15 @@ const timelineData = [
   },
   {
     id: 2,
+    type: 'education',
+    role: 'Sistem Informasi',
+    company: 'Universitas Esa Unggul',
+    duration: 'September 2024 — Sekarang',
+    desc: 'Sedang menempuh pendidikan S1 Sistem Informasi. Mempelajari pengembangan web, database, jaringan komputer, pemrograman berorientasi objek, serta analisis dan desain sistem informasi.',
+    icon: <GraduationCap className="text-accent-violet" size={16} />
+  },
+  {
+    id: 3,
     type: 'work',
     role: 'Media Social Support',
     company: 'Media Indonesia',
@@ -36,15 +45,6 @@ const timelineData = [
       'Mengoordinasikan proses set-up, pengambilan gambar, & editing video trivia pendek.'
     ],
     icon: <Briefcase className="text-accent-indigo" size={16} />
-  },
-  {
-    id: 3,
-    type: 'education',
-    role: 'Sistem Informasi',
-    company: 'Universitas Esa Unggul',
-    duration: 'September 2024 — Sekarang',
-    desc: 'Sedang menempuh pendidikan S1 Sistem Informasi. Mempelajari pengembangan web, database, jaringan komputer, pemrograman berorientasi objek, serta analisis dan desain sistem informasi.',
-    icon: <GraduationCap className="text-accent-violet" size={16} />
   },
   {
     id: 4,
@@ -138,13 +138,13 @@ const Experience = () => {
 
               {/* Description */}
               {item.bullets ? (
-                <ul className="list-disc pl-4 space-y-1.5 text-gray-400 text-xs sm:text-sm">
+                <ul className="list-disc pl-4 space-y-1.5 text-gray-300 text-xs sm:text-sm">
                   {item.bullets.map((bullet, bIdx) => (
                     <li key={bIdx}>{bullet}</li>
                   ))}
                 </ul>
               ) : (
-                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                   {item.desc}
                 </p>
               )}

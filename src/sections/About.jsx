@@ -59,7 +59,7 @@ const About = () => {
             Halo, saya Fadlan Achmad Frizal!
           </h3>
           
-          <div className="space-y-4 text-gray-400 text-sm sm:text-base leading-relaxed">
+          <div className="space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed">
             <p>
               Saya adalah Alumni <strong className="text-white">Rekayasa Perangkat Lunak (RPL)</strong> dari <strong className="text-white">SMK Telkom Shandy Putra Jakarta</strong> dan saat ini sedang menempuh pendidikan S1 Sistem Informasi di <strong className="text-white">Universitas Esa Unggul</strong>.
             </p>

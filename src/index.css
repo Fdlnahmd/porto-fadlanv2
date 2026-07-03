@@ -22,19 +22,19 @@
 }
 
 .dark {
-  --bg-primary: #0f172a; /* Softer, Slate-900 background instead of pitch black */
-  --card-bg: rgba(30, 41, 59, 0.45); /* Slate-800 frosted glass cards */
-  --text-primary: #f8fafc; /* Slate-50 */
-  --text-secondary: #94a3b8; /* Slate-400 */
-  --border-color: rgba(255, 255, 255, 0.06);
-  --glass-shadow: rgba(0, 0, 0, 0.25);
-  --selection-bg: rgba(99, 102, 241, 0.3);
+  --bg-primary: #0a0a0f; /* Deep custom obsidian navy background */
+  --card-bg: rgba(19, 19, 26, 0.65); /* Frosted #13131A glass cards */
+  --text-primary: #e4e4e7; /* Zinc 200 off-white */
+  --text-secondary: #a1a1aa; /* Zinc 400 muted gray */
+  --border-color: rgba(255, 255, 255, 0.08); /* Elevated card border */
+  --glass-shadow: rgba(0, 0, 0, 0.45);
+  --selection-bg: rgba(59, 130, 246, 0.25);
   --selection-text: #ffffff;
-  --nav-bg: rgba(15, 23, 42, 0.75); /* Slate-900 with opacity */
+  --nav-bg: rgba(10, 10, 15, 0.8);
   --nav-border: rgba(255, 255, 255, 0.05);
-  --scrollbar-track: #0f172a;
-  --scrollbar-thumb: #1e293b;
-  --scrollbar-thumb-hover: #334155;
+  --scrollbar-track: #0a0a0f;
+  --scrollbar-thumb: #1c1c24;
+  --scrollbar-thumb-hover: #2b2b35;
 }
 
 @theme {
@@ -44,8 +44,8 @@
   --color-dark-bg: var(--bg-primary);
   --color-dark-card: var(--card-bg);
   --color-accent-violet: #8b5cf6;
-  --color-accent-indigo: #6366f1;
-  --color-accent-teal: #0d9488;
+  --color-accent-indigo: #3b82f6; /* Sleek Cobalt Blue instead of generic neon indigo */
+  --color-accent-teal: #0ea5e9; /* Light slate blue/sky accent */
   --color-accent-emerald: #10b981;
 }
 
@@ -110,8 +110,8 @@ body {
 }
 
 .glow-card:hover {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
-  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.06);
+  border-color: rgba(59, 130, 246, 0.15);
 }
 
 /* Custom aurora-grid utility */

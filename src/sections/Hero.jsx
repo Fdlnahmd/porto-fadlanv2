@@ -26,7 +26,7 @@ const TECH_BADGES = [
 ];
 
 const lineColor = {
-  cmd: 'text-accent-indigo',
+  cmd: 'text-lime-400', // Neon green for terminal commands (#A3E635)
   success: 'text-accent-teal',
   info: 'text-yellow-400',
   monitor: 'text-purple-400',
@@ -208,7 +208,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-gray-400 text-sm sm:text-base leading-relaxed mb-10 max-w-xl"
+            className="text-gray-300 text-sm sm:text-base leading-relaxed mb-10 max-w-xl"
           >
             Fresh graduate SMK Rekayasa Perangkat Lunak (RPL) di SMK Telkom Shandy Putra Jakarta yang memiliki minat tinggi dalam coding, problem solving, dan pengembangan web dinamis maupun statis. Saat ini sedang menempuh pendidikan S1 Sistem Informasi di Universitas Esa Unggul.
           </motion.p>
@@ -232,7 +232,7 @@ const Hero = () => {
               href="https://drive.google.com/uc?export=download&id=1VBUBvgj0pc65mPP8qDx3Awo2GMyDtk0j"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl glassmorphism hover:bg-white/5 hover:border-white/10 text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-xl glassmorphism hover:bg-white/5 hover:border-white/10 text-gray-300 hover:text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5"
             >
               <MessageSquare size={18} className="text-accent-teal" />
               <span>Download CV</span>

@@ -23,17 +23,16 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Corporate Landing Page & Dashboard',
-    desc: 'Landing page premium dan interaktif untuk Nexus Corporation yang dilengkapi dengan dashboard admin untuk pengelolaan konten secara dinamis. Menampilkan profil perusahaan, tata kelola, dan lini bisnis utama secara responsif dan elegan.',
+    title: 'Acentra Service : Landing Page Service AC Depok',
+    desc: 'Landing page modern dan responsif untuk jasa perawatan dan cuci AC profesional Acentra Service di wilayah Depok. Dilengkapi dengan integrasi booking WhatsApp, daftar layanan, testimoni pelanggan, dan FAQ interaktif.',
     image: folio8,
-    category: 'fullstack',
-    tags: ['React.js (Vite)', 'Laravel 11 API', 'CI/CD GitHub Runners', 'Tailwind CSS', 'Framer Motion', 'Docker'],
-    demoLink: 'https://nexuscorp.nexvol.xyz/',
-    dashboardLink: 'https://nexuscorp.nexvol.xyz/admin/login'
+    category: 'frontend',
+    tags: ['React.js (Vite)', 'Tailwind CSS v4', 'Framer Motion', 'Docker', 'Nginx', 'Cloudflare Tunnel'],
+    demoLink: 'https://acentraservice.com'
   },
   {
     id: 3,
-    title: 'Jasa Servis Mobil Profesional',
+    title: 'Car Service - Landing Page',
     desc: 'Landing page modern untuk bisnis jasa service mobil profesional AutoPro. Dirancang dengan desain responsive mobile-first, form booking terintegrasi WhatsApp, FAQ interaktif, dan visualisasi detail layanan.',
     image: folio7,
     category: 'frontend',
@@ -241,7 +240,7 @@ const Projects = () => {
                   <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-2 leading-tight group-hover:text-accent-indigo transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">
+                  <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6">
                     {project.desc}
                   </p>
                 </div>
