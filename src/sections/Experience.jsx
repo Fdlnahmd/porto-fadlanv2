@@ -8,6 +8,7 @@ const timelineData = [
     type: 'work',
     role: 'Network Operation Center (NOC) Staff',
     company: 'PT Mitra Teknologi Andalan Utama',
+    link: 'https://www.mtau.co.id/',
     duration: 'Juli 2025 — Sekarang',
     bullets: [
       'Memantau kestabilan jaringan menggunakan Polestar, UniFi, dan Cisco vManage SD-WAN.',
@@ -25,6 +26,7 @@ const timelineData = [
     type: 'education',
     role: 'Sistem Informasi',
     company: 'Universitas Esa Unggul',
+    link: 'https://www.esaunggul.ac.id/',
     duration: 'September 2024 — Sekarang',
     desc: 'Sedang menempuh pendidikan S1 Sistem Informasi. Mempelajari pengembangan web, database, jaringan komputer, pemrograman berorientasi objek, serta analisis dan desain sistem informasi.',
     icon: <GraduationCap className="text-accent-violet" size={16} />
@@ -34,6 +36,7 @@ const timelineData = [
     type: 'work',
     role: 'Media Social Support',
     company: 'Media Indonesia',
+    link: 'https://mediaindonesia.com/',
     duration: 'Juli 2023 — Desember 2023',
     bullets: [
       'Membuat konten infografis informatif untuk media sosial resmi perusahaan.',
@@ -51,6 +54,7 @@ const timelineData = [
     type: 'education',
     role: 'Rekayasa Perangkat Lunak (RPL)',
     company: 'SMK Telkom Shandy Putra Jakarta',
+    link: 'https://smktelkom-jkt.sch.id/',
     duration: 'Juni 2021 — Mei 2024',
     desc: 'Mulai belajar pengembangan web dan pemrograman. Mendalami HTML, CSS, JavaScript, PHP, basis data, dan rekayasa perangkat lunak yang menjadi fondasi karier di bidang Web Development.',
     icon: <GraduationCap className="text-accent-teal" size={16} />
@@ -128,7 +132,13 @@ const Experience = () => {
               </h3>
               
               <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400 mb-4">
-                <span className="font-semibold text-gray-300">{item.company}</span>
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="font-semibold text-gray-300 hover:text-accent-teal hover:underline underline-offset-4 decoration-accent-teal/30 transition-colors duration-200">
+                    {item.company}
+                  </a>
+                ) : (
+                  <span className="font-semibold text-gray-300">{item.company}</span>
+                )}
                 <span>•</span>
                 <span className="flex items-center gap-1">
                   <Calendar size={12} />

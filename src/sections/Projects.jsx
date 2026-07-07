@@ -24,10 +24,10 @@ const projects = [
   {
     id: 2,
     title: 'Acentra Service : Landing Page Service AC Depok',
-    desc: 'Landing page modern dan responsif untuk jasa perawatan dan cuci AC profesional Acentra Service di wilayah Depok. Dilengkapi dengan integrasi booking WhatsApp, daftar layanan, testimoni pelanggan, dan FAQ interaktif.',
+    desc: 'Landing page modern untuk Acentra Service Depok. Dilengkapi kalkulator estimasi biaya interaktif, auto-formatting pesan WhatsApp, custom SSR prerender untuk optimasi SEO, serta penanganan performa tinggi.',
     image: folio8,
     category: 'frontend',
-    tags: ['React.js (Vite)', 'Tailwind CSS v4', 'Framer Motion', 'Docker', 'Nginx', 'Cloudflare Tunnel'],
+    tags: ['React (TypeScript)', 'Tailwind CSS v4', 'Framer Motion', 'SSR Prerender', 'Docker', 'Nginx', 'Cloudflare Tunnel'],
     demoLink: 'https://acentraservice.com'
   },
   {

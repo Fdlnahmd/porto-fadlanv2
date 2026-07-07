@@ -210,7 +210,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-gray-300 text-sm sm:text-base leading-relaxed mb-10 max-w-xl"
           >
-            Fresh graduate SMK Rekayasa Perangkat Lunak (RPL) di SMK Telkom Shandy Putra Jakarta yang memiliki minat tinggi dalam coding, problem solving, dan pengembangan web dinamis maupun statis. Saat ini sedang menempuh pendidikan S1 Sistem Informasi di Universitas Esa Unggul.
+            Alumni SMK, Rekayasa Perangkat Lunak (RPL) di SMK Telkom Shandy Putra Jakarta yang memiliki minat tinggi dalam coding, problem solving, dan pengembangan web dinamis maupun statis. Saat ini sedang menempuh pendidikan S1 Sistem Informasi di Universitas Esa Unggul.
           </motion.p>
 
           {/* CTA Buttons */}

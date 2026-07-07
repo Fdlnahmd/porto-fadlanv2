@@ -61,13 +61,13 @@ const About = () => {
           
           <div className="space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed">
             <p>
-              Saya adalah Alumni <strong className="text-white">Rekayasa Perangkat Lunak (RPL)</strong> dari <strong className="text-white">SMK Telkom Shandy Putra Jakarta</strong> dan saat ini sedang menempuh pendidikan S1 Sistem Informasi di <strong className="text-white">Universitas Esa Unggul</strong>.
+              Saya adalah Alumni <strong className="text-white">Rekayasa Perangkat Lunak (RPL)</strong> dari <a href="https://smktelkom-jkt.sch.id/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent-teal underline underline-offset-4 decoration-white/20 hover:decoration-accent-teal font-semibold transition-colors duration-200">SMK Telkom Shandy Putra Jakarta</a> dan saat ini sedang menempuh pendidikan S1 Sistem Informasi di <a href="https://www.esaunggul.ac.id/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent-indigo underline underline-offset-4 decoration-white/20 hover:decoration-accent-indigo font-semibold transition-colors duration-200">Universitas Esa Unggul</a>.
             </p>
             <p>
               Saya suka mencari tantangan baru dan memecahkan masalah untuk meningkatkan kemampuan diri. Memiliki minat mendalam pada <strong className="text-white">Problem Solving</strong>, coding, serta pembuatan website statis maupun dinamis. Saya selalu mencari peluang untuk berkembang menjadi tenaga profesional yang cerdas, yang terus mengasah soft skills maupun hard skills.
             </p>
             <p>
-              Dengan bekal pengalaman magang sebagai <strong className="text-white">Network Operation Center (NOC) Staff</strong> di PT Mitra Teknologi Andalan Utama dan <strong className="text-white">Media Social Support</strong> di Media Indonesia, saya siap berkontribusi secara nyata di industri teknologi.
+              Dengan bekal pengalaman magang sebagai <strong className="text-white">Network Operation Center (NOC) Staff</strong> di <a href="https://www.mtau.co.id/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent-teal underline underline-offset-4 decoration-white/20 hover:decoration-accent-teal font-semibold transition-colors duration-200">PT Mitra Teknologi Andalan Utama</a> dan <strong className="text-white">Media Social Support</strong> di <a href="https://mediaindonesia.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent-indigo underline underline-offset-4 decoration-white/20 hover:decoration-accent-indigo font-semibold transition-colors duration-200">Media Indonesia</a>, saya siap berkontribusi secara nyata di industri teknologi.
             </p>
           </div>
 
