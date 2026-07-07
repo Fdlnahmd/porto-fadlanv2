@@ -184,7 +184,7 @@ const Skills = () => {
             <ul className="space-y-2 text-xs text-gray-400">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-teal" />
-                <span>Ms. Office (Word, Excel, PowerPoint)</span>
+                <span>Windows, Linux (CLI)</span>
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-indigo" />
