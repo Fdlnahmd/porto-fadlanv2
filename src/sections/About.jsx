@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { User, Award, CheckSquare, GraduationCap, Globe } from 'lucide-react';
+import { Award, CheckSquare, GraduationCap, Globe } from 'lucide-react';
 
 const stats = [
   { icon: <Award className="text-accent-indigo" size={20} />, title: 'Universitas', value: 'Esa Unggul', desc: 'Jakarta, Sistem Informasi' },

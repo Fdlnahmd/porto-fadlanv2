@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Code, Sparkles, MessageSquare, Activity, MessageCircle, FileText } from 'lucide-react';
+import { ArrowRight, Code, Activity, MessageCircle, FileText } from 'lucide-react';
 import grafanaDashboard from '../assets/grafana-dashboard.webp';
 
 const roles = ['Fullstack Developer | DevOps Enthusiast', 'Freelance Web Developer', 'NOC Staff', 'Social Media Staff'];

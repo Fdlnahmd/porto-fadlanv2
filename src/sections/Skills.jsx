@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Cpu, Layout, Wrench, Palette } from 'lucide-react';
+import { Layout, Wrench, Palette } from 'lucide-react';
 
 const categories = [
   { id: 'frontend', name: 'Web Dev', icon: <Layout size={16} /> },
