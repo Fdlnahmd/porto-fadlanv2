@@ -36,7 +36,7 @@ const skillsData = {
         skills: ['CI/CD GitHub Actions', 'Nginx', 'Cloudflare', 'Grafana']
       }
     ],
-    note: 'Tech stack utama yang digunakan dalam proyek nyata seperti Wisma 46 Space, Acentra Service, dan nexvol.xyz.'
+    note: 'Tech stack utama yang digunakan dalam proyek yang di bangun.'
   },
   tools: {
     tiers: [
@@ -57,7 +57,7 @@ const skillsData = {
         skills: ['Troubleshooting & First Handling', 'Helpdesk / Ticketing', 'Network Monitoring']
       }
     ],
-    note: 'Digunakan selama magang NOC di PT Media Indonesia — monitoring jaringan nasional dan penanganan insiden helpdesk.'
+    note: 'Digunakan selama magang NOC di PT Mitra Teknologi Andalan Utama — monitoring jaringan SD-WAN dan penanganan trouble ticket.'
   },
   design: {
     tiers: [
@@ -78,7 +78,7 @@ const skillsData = {
         skills: ['Kamera & Lighting', 'Video Streaming', 'Reporting / Jurnalis']
       }
     ],
-    note: 'Diterapkan selama magang di PT MTAU (Media & Kreatif) sebagai Social Media Support dan reporter lapangan.'
+    note: 'Diterapkan selama magang di Media Indonesia (Media & Kreatif) sebagai Social Media Support dan reporter lapangan.'
   }
 };
 

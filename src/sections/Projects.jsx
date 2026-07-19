@@ -15,7 +15,7 @@ const projects = [
   {
     id: 2,
     title: 'Acentra Service : Landing Page Service AC Depok',
-    desc: 'Landing page modern untuk Acentra Service Depok. Dilengkapi kalkulator estimasi biaya interaktif, auto-formatting pesan WhatsApp, custom SSR prerender untuk optimasi SEO, serta penanganan performa tinggi.',
+    desc: 'Landing page modern untuk Acentra Service Depok. Dilengkapi kalkulator biaya interaktif, custom SSR prerender untuk SEO, serta deployment otomatis dengan Docker, Nginx, dan Cloudflare Tunnel di Linux VPS.',
     image: folio8,
     category: 'freelance',
     tags: ['React (TypeScript)', 'Tailwind CSS v4', 'Framer Motion', 'SSR Prerender', 'Docker', 'Nginx', 'Cloudflare Tunnel'],
@@ -24,7 +24,7 @@ const projects = [
   {
     id: 1,
     title: 'Premium Office Booking',
-    desc: 'Platform terintegrasi untuk pemesanan dan penyewaan ruang kantor, ruang pertemuan, dan coworking space premium di gedung pencakar langit ikonik Wisma 46 Kota BNI Jakarta.',
+    desc: 'Platform pemesanan kantor premium Wisma 46. Mengintegrasikan API Laravel 11, payment gateway Midtrans, pipeline CI/CD GitHub Actions ke VPS Docker, serta monitoring real-time menggunakan Grafana.',
     image: folio6,
     category: 'fullstack',
     tags: ['React.js (Vite)', 'Laravel 11 API', 'MySQL', 'Docker', 'Grafana', 'GitHub Actions', 'Midtrans Payment Gateway', 'AI Integration (Llama + Groq)'],
@@ -33,7 +33,7 @@ const projects = [
   {
     id: 3,
     title: 'Car Service - Landing Page',
-    desc: 'Landing page modern untuk bisnis jasa service mobil profesional AutoPro. Dirancang dengan desain responsive mobile-first, form booking terintegrasi WhatsApp, FAQ interaktif, dan visualisasi detail layanan.',
+    desc: 'Landing page responsive untuk bengkel AutoPro. Mengimplementasikan booking WhatsApp, integrasi FAQ, dengan deployment terisolasi menggunakan Docker, Nginx, dan Cloudflare Tunnel.',
     image: folio7,
     category: 'frontend',
     tags: ['React.js (Vite)', 'Tailwind CSS v4', 'Cloudflare Tunnel', 'Docker', 'Nginx'],
@@ -42,7 +42,7 @@ const projects = [
   {
     id: 4,
     title: 'Restaurant Franchise Platform',
-    desc: 'Platform web kuliner premium bertema Hainanese Kampung Chicken Rice autentik. Menyajikan navigasi menu berstruktur, portal kemitraan waralaba, serta antarmuka pelanggan yang modern.',
+    desc: 'Platform franchise kuliner premium OOP PHP Native. Mengotomatiskan publikasi kode melalui GitHub Actions, dengan isolasi environment Docker container di server staging.',
     image: folio5,
     category: 'fullstack',
     tags: ['PHP Native OOP', 'MySQL 8.0', 'Docker', 'Bootstrap 5', 'GitHub Actions'],
