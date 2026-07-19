@@ -5,6 +5,7 @@ import { Menu, X, Terminal, Sun, Moon } from 'lucide-react';
 const navItems = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
+  { name: 'Layanan', href: '#services' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
@@ -105,12 +106,13 @@ const Navbar = () => {
           <a 
             href="#home" 
             onClick={(e) => handleClick(e, '#home')}
-            className="flex items-center gap-2 font-display text-xl font-bold tracking-tight text-white group"
+            className="flex items-center gap-2.5 group"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-accent-indigo to-accent-violet flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
-              <Terminal size={16} />
-            </div>
-            <span>Fadlan<span className="text-accent-indigo text-glow-violet">.</span></span>
+            <img 
+              src="/favicon.png" 
+              alt="Fadlan Logo"
+              className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop Nav Items */}

@@ -1,105 +1,58 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Code, Sparkles, MessageSquare } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Code, Sparkles, MessageSquare, Activity, MessageCircle, FileText } from 'lucide-react';
+import grafanaDashboard from '../assets/grafana-dashboard.webp';
 
-const roles = ['Fullstack Developer | DevOps Enthusiast', 'NOC Staff', 'Social Media Staff'];
+const roles = ['Fullstack Developer | DevOps Enthusiast', 'Freelance Web Developer', 'NOC Staff', 'Social Media Staff'];
 
-const TERMINAL_LINES = [
-  { text: '$ docker compose up -d', type: 'cmd', delay: 400 },
-  { text: '  ✓ backend     running', type: 'success', delay: 1000 },
-  { text: '  ✓ frontend    running', type: 'success', delay: 1500 },
-  { text: '  ✓ database    running', type: 'success', delay: 2000 },
-  { text: '  ✓ grafana    running', type: 'success', delay: 2500 },
-  { text: '', type: 'empty', delay: 3000 },
-  { text: '$ git push origin main', type: 'cmd', delay: 3100 },
-  { text: '  → GitHub Actions: triggered', type: 'info', delay: 3700 },
-  { text: '  ✓ CI/CD: Deploy success ✨', type: 'success', delay: 4500 },
-  { text: '', type: 'empty', delay: 5100 },
-  { text: '  ● Grafana: Monitoring active', type: 'monitor', delay: 5500 },
+const STAT_BADGES = [
+  { label: '11 Containers', color: 'from-emerald-500/20 to-green-500/10 border-emerald-500/30 text-emerald-400', pos: '-top-3 left-4' },
+  { label: '99.9% Uptime', color: 'from-blue-500/20 to-cyan-500/10 border-blue-500/30 text-blue-400', pos: '-top-3 right-4' },
+  { label: 'CPU 4.5%', color: 'from-orange-500/20 to-amber-500/10 border-orange-500/30 text-orange-400', pos: '-bottom-3 left-4' },
+  { label: '686 MiB RAM', color: 'from-violet-500/20 to-purple-500/10 border-violet-500/30 text-violet-400', pos: '-bottom-3 right-4' },
 ];
 
-const TECH_BADGES = [
-  { label: 'Laravel', color: 'from-red-500/20 to-rose-500/10 border-red-500/20 text-red-400', pos: '-top-4 left-8' },
-  { label: 'Docker', color: 'from-blue-500/20 to-cyan-500/10 border-blue-500/20 text-blue-400', pos: '-top-4 right-8' },
-  { label: 'React.js', color: 'from-cyan-500/20 to-teal-500/10 border-cyan-500/20 text-cyan-400', pos: '-bottom-4 left-8' },
-  { label: 'Grafana', color: 'from-orange-500/20 to-amber-500/10 border-orange-500/20 text-orange-400', pos: '-bottom-4 right-8' },
-];
-
-const lineColor = {
-  cmd: 'text-lime-400', // Neon green for terminal commands (#A3E635)
-  success: 'text-accent-teal',
-  info: 'text-yellow-400',
-  monitor: 'text-purple-400',
-  empty: '',
-};
-
-const TerminalCard = () => {
-  const [visibleCount, setVisibleCount] = useState(0);
-
-  useEffect(() => {
-    if (visibleCount >= TERMINAL_LINES.length) return;
-    const next = TERMINAL_LINES[visibleCount];
-    const t = setTimeout(() => setVisibleCount(v => v + 1), next.delay);
-    return () => clearTimeout(t);
-  }, [visibleCount]);
-
-  // Loop: reset after all done
-  useEffect(() => {
-    if (visibleCount < TERMINAL_LINES.length) return;
-    const t = setTimeout(() => setVisibleCount(0), 3000);
-    return () => clearTimeout(t);
-  }, [visibleCount]);
-
+const GrafanaDashboardCard = () => {
   return (
     <motion.div
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.7, delay: 0.5 }}
-      className="relative w-full max-w-sm mx-auto lg:mx-0"
+      className="relative w-full mx-auto lg:mx-0"
     >
-      {/* Floating tech badges */}
-      {TECH_BADGES.map((b, i) => (
+      {/* Floating stat badges */}
+      {STAT_BADGES.map((b, i) => (
         <motion.span
           key={b.label}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: [0, -4, 0] }}
-          transition={{ duration: 3, delay: 1.5 + i * 0.3, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 3.5, delay: 1.2 + i * 0.4, repeat: Infinity, ease: 'easeInOut' }}
           className={`absolute z-20 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border bg-gradient-to-r ${b.color} backdrop-blur-sm ${b.pos}`}
         >
           {b.label}
         </motion.span>
       ))}
 
-      {/* Terminal window */}
+      {/* Dashboard window */}
       <div className="glassmorphism rounded-2xl border border-white/10 overflow-hidden shadow-[0_0_40px_rgba(99,102,241,0.15)]">
         {/* Title bar */}
         <div className="flex items-center gap-2 px-4 py-3 bg-white/[0.03] border-b border-white/5">
           <div className="w-3 h-3 rounded-full bg-red-500/70" />
           <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
           <div className="w-3 h-3 rounded-full bg-green-500/70" />
-          <span className="ml-2 text-[11px] text-gray-500 font-mono">fadlan@server: ~/projects</span>
+          <Activity size={10} className="ml-2 text-emerald-400" />
+          <span className="text-[11px] text-gray-500 font-mono">grafana.nexvol.xyz — Container Monitoring</span>
         </div>
 
-        {/* Terminal body */}
-        <div className="p-5 font-mono text-xs space-y-1 min-h-[200px]">
-          <AnimatePresence>
-            {TERMINAL_LINES.slice(0, visibleCount).map((line, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.2 }}
-                className={`${lineColor[line.type] || 'text-gray-400'} leading-relaxed`}
-              >
-                {line.text || '\u00A0'}
-              </motion.div>
-            ))}
-          </AnimatePresence>
-
-          {/* Blinking cursor */}
-          {visibleCount < TERMINAL_LINES.length && (
-            <span className="inline-block w-2 h-3.5 bg-accent-indigo animate-[blink_1s_step-start_infinite]" />
-          )}
+        {/* Dashboard screenshot */}
+        <div className="relative">
+          <img
+            src={grafanaDashboard}
+            alt="Grafana Dashboard nexvol.xyz — real container monitoring"
+            className="w-full object-cover object-top"
+          />
+          {/* Subtle overlay gradient at bottom for a clean fade */}
+          <div className="absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
         </div>
       </div>
     </motion.div>
@@ -167,16 +120,27 @@ const Hero = () => {
         {/* LEFT: Text content */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
 
-          {/* Intro badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="px-4 py-1.5 rounded-full glassmorphism text-xs font-semibold text-accent-indigo tracking-wider uppercase flex items-center gap-2 mb-6"
-          >
-            <Sparkles size={12} className="animate-pulse" />
-            <span>Hello, I'm</span>
-          </motion.div>
+          {/* Status Badges */}
+          <div className="flex flex-wrap gap-2.5 mb-6 justify-center lg:justify-start">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="px-3.5 py-1.5 rounded-full glassmorphism text-[10px] font-bold tracking-wider uppercase flex items-center gap-2 text-emerald-400 border border-emerald-500/20"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Open to Work</span>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="px-3.5 py-1.5 rounded-full glassmorphism text-[10px] font-bold tracking-wider uppercase flex items-center gap-2 text-cyan-400 border border-cyan-500/20"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              <span>Freelance Available</span>
+            </motion.div>
+          </div>
 
           {/* Name */}
           <motion.h1
@@ -218,31 +182,44 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 items-center lg:items-start w-full sm:w-auto"
+            className="flex flex-col sm:flex-row flex-wrap gap-4 items-center lg:items-start w-full sm:w-auto justify-center lg:justify-start"
           >
+            {/* Primary: View Projects */}
             <button
               onClick={() => handleScrollToSection('#projects')}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-accent-indigo to-accent-violet hover:shadow-[0_0_25px_rgba(99,102,241,0.4)] text-white font-medium flex items-center justify-center gap-2 group transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-accent-indigo to-accent-violet hover:shadow-[0_0_25px_rgba(99,102,241,0.4)] text-white font-medium flex items-center justify-center gap-2 group transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer text-sm"
             >
-              <Code size={18} />
-              <span>View Projects</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+              <Code size={16} />
+              <span>Lihat Proyek</span>
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
             </button>
+
+            <a
+              href="https://wa.me/6281584350420?text=Halo%20Fadlan%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website%20Anda.%20Bisa%20diskusi%20lebih%20lanjut%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 font-medium flex items-center justify-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5 text-sm"
+            >
+              <MessageCircle size={16} />
+              <span>Hubungi Jasa</span>
+            </a>
+
+            {/* Tertiary: Download CV */}
             <a
               href="https://drive.google.com/uc?export=download&id=1VBUBvgj0pc65mPP8qDx3Awo2GMyDtk0j"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl glassmorphism hover:bg-white/5 hover:border-white/10 text-gray-300 hover:text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl glassmorphism hover:bg-white/5 hover:border-white/10 text-gray-300 hover:text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5 text-sm"
             >
-              <MessageSquare size={18} className="text-accent-teal" />
+              <FileText size={16} className="text-accent-teal" />
               <span>Download CV</span>
             </a>
           </motion.div>
         </div>
 
-        {/* RIGHT: Terminal card */}
-        <div className="hidden lg:flex justify-center lg:justify-end pt-8">
-          <TerminalCard />
+        {/* RIGHT: Grafana Dashboard — visible from md breakpoint */}
+        <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
+          <GrafanaDashboardCard />
         </div>
 
       </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, Mail, MapPin, Send, CheckCircle, AlertCircle, RefreshCw } from 'lucide-react';
+import { MessageSquare, Mail, MapPin, Send, CheckCircle, AlertCircle, RefreshCw, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -8,6 +8,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [submitError, setSubmitError] = useState('');
+  const [contactMode, setContactMode] = useState('whatsapp');
 
   // Live input validations
   const validateForm = () => {
@@ -181,117 +182,181 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="lg:col-span-7 glassmorphism p-8 rounded-2xl border border-white/5"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            
-            {/* Name Input */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="name" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
-                Nama Lengkap
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Masukkan nama Anda..."
-                value={formData.name}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 ${
-                  errors.name 
-                    ? 'border-red-500/50 focus:border-red-500/80 bg-red-500/5' 
-                    : 'border-white/5 hover:border-white/10 focus:border-accent-indigo/40'
-                }`}
-              />
-              {errors.name && (
-                <span className="text-[11px] text-red-400 flex items-center gap-1 font-medium">
-                  <AlertCircle size={10} />
-                  {errors.name}
-                </span>
-              )}
-            </div>
-
-            {/* Email Input */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
-                Alamat Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Contoh: nama@domain.com"
-                value={formData.email}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 ${
-                  errors.email 
-                    ? 'border-red-500/50 focus:border-red-500/80 bg-red-500/5' 
-                    : 'border-white/5 hover:border-white/10 focus:border-accent-indigo/40'
-                }`}
-              />
-              {errors.email && (
-                <span className="text-[11px] text-red-400 flex items-center gap-1 font-medium">
-                  <AlertCircle size={10} />
-                  {errors.email}
-                </span>
-              )}
-            </div>
-
-            {/* Message Input */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
-                Pesan
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Tulis detail proyek atau pertanyaan Anda di sini..."
-                value={formData.message}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 resize-none ${
-                  errors.message 
-                    ? 'border-red-500/50 focus:border-red-500/80 bg-red-500/5' 
-                    : 'border-white/5 hover:border-white/10 focus:border-accent-indigo/40'
-                }`}
-              />
-              {errors.message && (
-                <span className="text-[11px] text-red-400 flex items-center gap-1 font-medium">
-                  <AlertCircle size={10} />
-                  {errors.message}
-                </span>
-              )}
-            </div>
-
-            {/* Submission Error Alert */}
-            {submitError && (
-              <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs flex items-center gap-2 font-medium">
-                <AlertCircle size={14} />
-                <span>{submitError}</span>
-              </div>
-            )}
-
-            {/* Submit Button */}
+          {/* Toggle Switcher */}
+          <div className="flex flex-col sm:flex-row bg-white/5 p-1 rounded-xl mb-6 border border-white/5 gap-1">
             <button
-              type="submit"
-              disabled={isSubmitting}
-              className={`w-full py-3.5 rounded-xl text-sm font-semibold text-white tracking-wide flex items-center justify-center gap-2 group transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer ${
-                isSubmitting 
-                  ? 'bg-accent-indigo/60 cursor-not-allowed' 
-                  : 'bg-gradient-to-r from-accent-indigo to-accent-violet hover:shadow-[0_0_20px_rgba(99,102,241,0.3)]'
+              onClick={() => setContactMode('whatsapp')}
+              className={`w-full sm:flex-1 py-3 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                contactMode === 'whatsapp'
+                  ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5 border border-transparent'
               }`}
             >
-              {isSubmitting ? (
-                <>
-                  <RefreshCw size={16} className="animate-spin" />
-                  <span>Mengirim Pesan...</span>
-                </>
-              ) : (
-                <>
-                  <Send size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-                  <span>Kirim Pesan</span>
-                </>
-              )}
+              WhatsApp (Respon Cepat)
             </button>
-          </form>
+            <button
+              onClick={() => setContactMode('email')}
+              className={`w-full sm:flex-1 py-3 px-4 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                contactMode === 'email'
+                  ? 'bg-accent-indigo/20 text-accent-indigo border border-accent-indigo/30'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5 border border-transparent'
+              }`}
+            >
+              Form Email (HRD / Rekrutmen)
+            </button>
+          </div>
+
+          <AnimatePresence mode="wait">
+            {contactMode === 'whatsapp' ? (
+              <motion.div
+                key="whatsapp-mode"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+                className="flex flex-col items-center text-center py-8 px-4 space-y-6"
+              >
+                <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 animate-pulse">
+                  <MessageCircle size={32} />
+                </div>
+                <div>
+                  <h4 className="font-display text-lg font-bold text-white mb-2">Hubungi Langsung via WhatsApp</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+                    Untuk konsultasi proyek website, diskusi estimasi biaya, atau kebutuhan kustom web lainnya. Klik tombol di bawah untuk langsung terhubung dengan saya.
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281584350420?text=Halo%20Fadlan%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website%20Anda.%20Bisa%20diskusi%20lebih%20lanjut%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:shadow-[0_0_25px_rgba(16,185,129,0.3)] text-white font-semibold flex items-center justify-center gap-2 group transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer text-sm"
+                >
+                  <MessageCircle size={18} />
+                  <span>Kirim Pesan ke WhatsApp</span>
+                </a>
+              </motion.div>
+            ) : (
+              <motion.form
+                key="email-mode"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                
+                {/* Name Input */}
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="name" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                    Nama Lengkap
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Masukkan nama Anda..."
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 ${
+                      errors.name 
+                        ? 'border-red-500/50 focus:border-red-500/80 bg-red-500/5' 
+                        : 'border-white/5 hover:border-white/10 focus:border-accent-indigo/40'
+                    }`}
+                  />
+                  {errors.name && (
+                    <span className="text-[11px] text-red-400 flex items-center gap-1 font-medium">
+                      <AlertCircle size={10} />
+                      {errors.name}
+                    </span>
+                  )}
+                </div>
+
+                {/* Email Input */}
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="email" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                    Alamat Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Contoh: nama@domain.com"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 ${
+                      errors.email 
+                        ? 'border-red-500/50 focus:border-red-500/80 bg-red-500/5' 
+                        : 'border-white/5 hover:border-white/10 focus:border-accent-indigo/40'
+                    }`}
+                  />
+                  {errors.email && (
+                    <span className="text-[11px] text-red-400 flex items-center gap-1 font-medium">
+                      <AlertCircle size={10} />
+                      {errors.email}
+                    </span>
+                  )}
+                </div>
+
+                {/* Message Input */}
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="message" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                    Pesan
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Tulis detail proyek atau pertanyaan Anda di sini..."
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 rounded-xl bg-white/5 border text-sm text-white placeholder-gray-600 focus:outline-none transition-all duration-300 resize-none ${
+                      errors.message 
+                        ? 'border-red-500/50 focus:border-red-500/80 bg-red-500/5' 
+                        : 'border-white/5 hover:border-white/10 focus:border-accent-indigo/40'
+                    }`}
+                  />
+                  {errors.message && (
+                    <span className="text-[11px] text-red-400 flex items-center gap-1 font-medium">
+                      <AlertCircle size={10} />
+                      {errors.message}
+                    </span>
+                  )}
+                </div>
+
+                {/* Submission Error Alert */}
+                {submitError && (
+                  <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs flex items-center gap-2 font-medium">
+                    <AlertCircle size={14} />
+                    <span>{submitError}</span>
+                  </div>
+                )}
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full py-3.5 rounded-xl text-sm font-semibold text-white tracking-wide flex items-center justify-center gap-2 group transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer ${
+                    isSubmitting 
+                      ? 'bg-accent-indigo/60 cursor-not-allowed' 
+                      : 'bg-gradient-to-r from-accent-indigo to-accent-violet hover:shadow-[0_0_20px_rgba(99,102,241,0.3)]'
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <RefreshCw size={16} className="animate-spin" />
+                      <span>Mengirim Pesan...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                      <span>Kirim Pesan</span>
+                    </>
+                  )}
+                </button>
+              </motion.form>
+            )}
+          </AnimatePresence>
         </motion.div>
       </div>
 

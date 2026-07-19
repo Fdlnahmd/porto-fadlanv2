@@ -93,9 +93,7 @@ const Footer = () => {
           &copy; {currentYear} Fadlan Achmad Frizal. All rights reserved.
         </div>
         <div className="flex gap-4">
-          <span className="hover:text-white transition-colors duration-200">Built with React & Tailwind</span>
-          <span>•</span>
-          <span className="hover:text-white transition-colors duration-200">Statically Served</span>
+          <span className="hover:text-white transition-colors duration-200">Build with React &amp; Tailwind</span>
         </div>
       </div>
     </footer>

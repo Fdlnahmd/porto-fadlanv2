@@ -1,45 +1,36 @@
 
 import { motion } from 'framer-motion';
-import { User, Award, CheckSquare, GraduationCap, Heart } from 'lucide-react';
+import { User, Award, CheckSquare, GraduationCap, Globe } from 'lucide-react';
 
 const stats = [
   { icon: <Award className="text-accent-indigo" size={20} />, title: 'Universitas', value: 'Esa Unggul', desc: 'Jakarta, Sistem Informasi' },
   { icon: <CheckSquare className="text-accent-teal" size={20} />, title: 'Proyek Selesai', value: '6+ Proyek', desc: 'Web Dev & Media' },
   { icon: <GraduationCap className="text-accent-violet" size={20} />, title: 'Magang', value: '2x Internship', desc: 'NOC & Social Media Staff' },
-  { icon: <Heart className="text-pink-500" size={20} />, title: 'Domisili', value: 'Jakarta Barat', desc: 'Kemanggisan, Palmerah' }
+  { icon: <Globe className="text-pink-500" size={20} />, title: 'Jasa Tersedia', value: 'Website & VPS', desc: 'Landing Page, Web App, Deploy Server' }
 ];
 
 const About = () => {
   return (
     <section id="about" className="py-24 px-6 max-w-6xl mx-auto">
       {/* Section Header */}
-      <div className="text-center mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-accent-teal uppercase tracking-wider mb-3"
-        >
-          <User size={12} />
-          <span>Tentang Saya</span>
-        </motion.div>
-        <motion.h2
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-display text-3xl sm:text-4xl font-extrabold text-white"
-        >
-          Mengenal Diri Saya Lebih Dekat
-        </motion.h2>
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: '60px' }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="h-1 bg-gradient-to-r from-accent-indigo to-accent-teal mx-auto mt-4 rounded-full"
-        />
+      <div className="mb-16 flex items-end gap-4 justify-between border-b border-white/5 pb-6">
+        <div>
+          <span className="font-mono text-xs text-accent-teal uppercase tracking-widest block mb-2">
+            01 / Biografi
+          </span>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            className="font-display text-3xl sm:text-4xl font-extrabold text-white"
+          >
+            Tentang Saya
+          </motion.h2>
+        </div>
+        <span className="hidden sm:block font-display text-6xl font-extrabold text-white/[0.02] select-none leading-none">
+          ABOUT
+        </span>
       </div>
 
       {/* Grid Layout */}
@@ -64,7 +55,7 @@ const About = () => {
               Saya adalah Lulusan <strong className="text-white">Rekayasa Perangkat Lunak (RPL)</strong> dari <a href="https://smktelkom-jkt.sch.id/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent-teal underline underline-offset-4 decoration-white/20 hover:decoration-accent-teal font-semibold transition-colors duration-200">SMK Telkom Shandy Putra Jakarta</a> dan saat ini sedang menempuh pendidikan S1 Sistem Informasi di <a href="https://www.esaunggul.ac.id/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent-indigo underline underline-offset-4 decoration-white/20 hover:decoration-accent-indigo font-semibold transition-colors duration-200">Universitas Esa Unggul</a>.
             </p>
             <p>
-              Saya suka mencari tantangan baru dan memecahkan masalah untuk meningkatkan kemampuan diri. Memiliki minat mendalam pada <strong className="text-white">Problem Solving</strong>, coding, serta pembuatan website statis maupun dinamis. Saya selalu mencari peluang untuk berkembang menjadi tenaga profesional yang cerdas, yang terus mengasah soft skills maupun hard skills.
+              Saya suka mencari tantangan baru dan memecahkan masalah untuk meningkatkan kemampuan diri. Memiliki minat mendalam pada <strong className="text-white">Problem Solving</strong>, coding, serta pembuatan website statis maupun dinamis. Selain berfokus pada karir profesional, saya juga aktif menerima proyek freelance untuk membantu klien membangun kehadiran digital mereka secara maksimal.
             </p>
             <p>
               Dengan bekal pengalaman magang sebagai <strong className="text-white">Network Operation Center (NOC) Staff</strong> di <a href="https://www.mtau.co.id/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent-teal underline underline-offset-4 decoration-white/20 hover:decoration-accent-teal font-semibold transition-colors duration-200">PT Mitra Teknologi Andalan Utama</a> dan <strong className="text-white">Media Social Support</strong> di <a href="https://mediaindonesia.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent-indigo underline underline-offset-4 decoration-white/20 hover:decoration-accent-indigo font-semibold transition-colors duration-200">Media Indonesia</a>, saya siap berkontribusi secara nyata di industri teknologi.
@@ -73,7 +64,7 @@ const About = () => {
 
           {/* Quick info badges */}
           <div className="mt-8 flex flex-wrap gap-3">
-            {['Web Developer', 'NOC Staff', 'Social Media'].map((item) => (
+            {['Web Developer', 'Freelance Available', 'Jasa Pembuatan Website', 'NOC Staff', 'Social Media Support'].map((item) => (
               <span key={item} className="px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs text-gray-300 font-medium">
                 {item}
               </span>

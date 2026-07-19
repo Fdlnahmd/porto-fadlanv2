@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 // Import Sections
 import Hero from './sections/Hero';
 import About from './sections/About';
+import Services from './sections/Services';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Experience from './sections/Experience';
@@ -55,6 +56,9 @@ function App() {
 
         {/* About Section */}
         <About />
+
+        {/* Services Section */}
+        <Services />
 
         {/* Skills Section */}
         <Skills />

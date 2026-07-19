@@ -13,6 +13,15 @@ import folio8 from '../assets/folio-8.webp';
 
 const projects = [
   {
+    id: 2,
+    title: 'Acentra Service : Landing Page Service AC Depok',
+    desc: 'Landing page modern untuk Acentra Service Depok. Dilengkapi kalkulator estimasi biaya interaktif, auto-formatting pesan WhatsApp, custom SSR prerender untuk optimasi SEO, serta penanganan performa tinggi.',
+    image: folio8,
+    category: 'freelance',
+    tags: ['React (TypeScript)', 'Tailwind CSS v4', 'Framer Motion', 'SSR Prerender', 'Docker', 'Nginx', 'Cloudflare Tunnel'],
+    demoLink: 'https://acentraservice.com'
+  },
+  {
     id: 1,
     title: 'Premium Office Booking',
     desc: 'Platform terintegrasi untuk pemesanan dan penyewaan ruang kantor, ruang pertemuan, dan coworking space premium di gedung pencakar langit ikonik Wisma 46 Kota BNI Jakarta.',
@@ -20,15 +29,6 @@ const projects = [
     category: 'fullstack',
     tags: ['React.js (Vite)', 'Laravel 11 API', 'MySQL', 'Docker', 'Grafana', 'GitHub Actions', 'Midtrans Payment Gateway', 'AI Integration (Llama + Groq)'],
     demoLink: 'https://w46space.nexvol.xyz/'
-  },
-  {
-    id: 2,
-    title: 'Acentra Service : Landing Page Service AC Depok',
-    desc: 'Landing page modern untuk Acentra Service Depok. Dilengkapi kalkulator estimasi biaya interaktif, auto-formatting pesan WhatsApp, custom SSR prerender untuk optimasi SEO, serta penanganan performa tinggi.',
-    image: folio8,
-    category: 'frontend',
-    tags: ['React (TypeScript)', 'Tailwind CSS v4', 'Framer Motion', 'SSR Prerender', 'Docker', 'Nginx', 'Cloudflare Tunnel'],
-    demoLink: 'https://acentraservice.com'
   },
   {
     id: 3,
@@ -91,6 +91,7 @@ const categories = [
   { id: 'all', name: 'Semua Proyek' },
   { id: 'fullstack', name: 'Fullstack Web' },
   { id: 'frontend', name: 'Frontend Web' },
+  { id: 'freelance', name: 'Freelance / Klien' },
   { id: 'media', name: 'Media & Konten' }
 ];
 
@@ -112,33 +113,27 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
       {/* Section Header */}
-      <div className="text-center mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-accent-indigo uppercase tracking-wider mb-3"
-        >
-          <FolderGit2 size={12} />
-          <span>Portofolio</span>
-        </motion.div>
-        <motion.h2
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-display text-3xl sm:text-4xl font-extrabold text-white"
-        >
-          Karya Terbaik Yang Saya Bangun
-        </motion.h2>
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: '60px' }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="h-1 bg-gradient-to-r from-accent-indigo to-accent-teal mx-auto mt-4 rounded-full"
-        />
+      <div className="mb-16 flex flex-col md:flex-row md:items-center gap-4 justify-between border-b border-white/5 pb-6">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-[2px] bg-accent-indigo rounded-full hidden sm:block" />
+          <div>
+            <span className="font-mono text-xs text-accent-indigo uppercase tracking-widest block mb-1">
+              Portofolio
+            </span>
+            <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+              className="font-display text-2xl sm:text-3xl font-extrabold text-white"
+            >
+              Karya Terbaik Yang Saya Bangun
+            </motion.h2>
+          </div>
+        </div>
+        <span className="hidden md:block font-display text-6xl font-extrabold text-white/[0.02] select-none leading-none">
+          WORKS
+        </span>
       </div>
 
       {/* Controls Container */}
@@ -184,23 +179,27 @@ const Projects = () => {
       </div>
 
       {/* Projects Grid Grid */}
-      <motion.div 
-        layout
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.4 }}
-              className="glassmorphism rounded-2xl overflow-hidden border border-white/5 glow-card hover:border-white/10 transition-all duration-300 flex flex-col h-full group"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className={`glassmorphism rounded-2xl overflow-hidden border glow-card hover:border-white/10 transition-all duration-300 flex flex-col h-full group ${
+                project.id === 2
+                  ? 'md:col-span-2 border-accent-indigo/20 shadow-[0_0_30px_rgba(99,102,241,0.08)]'
+                  : 'border-white/5'
+              }`}
             >
               {/* Card Header (Thumbnail Image or Glowing CSS backdrop) */}
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-900 flex items-center justify-center">
+              <div className={`relative w-full overflow-hidden bg-slate-900 flex items-center justify-center ${
+                project.id === 2
+                  ? 'h-[200px] sm:h-[280px] md:h-[340px]'
+                  : 'aspect-[16/9]'
+              }`}>
                 {project.image ? (
                   <img
                     src={project.image}
@@ -232,6 +231,18 @@ const Projects = () => {
                 <span className="absolute top-4 left-4 px-2.5 py-1 rounded-md bg-dark-bg/80 border border-white/5 backdrop-blur-md text-[10px] uppercase font-bold text-accent-teal tracking-wider">
                   {project.category}
                 </span>
+                {/* Klien Nyata badge for freelance projects */}
+                {project.category === 'freelance' && (
+                  <span className="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-emerald-500/20 border border-emerald-500/30 backdrop-blur-md text-[10px] uppercase font-bold text-emerald-400 tracking-wider">
+                    Klien Nyata
+                  </span>
+                )}
+                {/* Featured badge for Acentra Service */}
+                {project.id === 2 && (
+                  <span className="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-accent-indigo/20 border border-accent-indigo/30 backdrop-blur-md text-[10px] uppercase font-bold text-accent-indigo tracking-wider">
+                    ★ Featured
+                  </span>
+                )}
               </div>
 
               {/* Card Content body */}
@@ -339,7 +350,7 @@ const Projects = () => {
             <p className="text-gray-500 text-sm">Cobalah mencari kata kunci atau teknologi yang lain.</p>
           </motion.div>
         )}
-      </motion.div>
+      </div>
     </section>
   );
 };
