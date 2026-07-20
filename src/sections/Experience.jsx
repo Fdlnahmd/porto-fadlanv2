@@ -7,7 +7,7 @@ const workExperience = [
     role: 'Network Operation Center (NOC) Staff',
     company: 'PT Mitra Teknologi Andalan Utama',
     link: 'https://www.mtau.co.id/',
-    duration: 'Juli 2025 — Sekarang',
+    duration: 'Juli 2025 — Juli 2026',
     bullets: [
       'Memantau kestabilan jaringan menggunakan Polestar, UniFi, dan Cisco vManage SD-WAN.',
       'Menangani kendala awal (first handling) pada laporan gangguan sistem yang masuk.',
