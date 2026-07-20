@@ -1,0 +1,37 @@
+# Fadlan Achmad Frizal — Portfolio & Professional Services
+
+Official portfolio and services registry of Fadlan Achmad Frizal, a Fullstack Developer & DevOps Enthusiast based in Jakarta Barat, Indonesia.
+
+## About
+Fadlan is a graduate in Software Engineering (RPL) from SMK Telkom Jakarta and a current student of Information Systems at Universitas Esa Unggul. He specializes in web development (React, Laravel), system administration, Linux VPS configuration, Docker containerization, CI/CD automation, and network monitoring (NOC).
+
+## Freelance Services
+Fadlan offers professional web development and systems engineering services via WhatsApp (+62 815-8435-0420):
+- **Landing Page**: Modern landing pages for businesses and startups.
+- **Fullstack Web Application**: Dynamic, interactive applications built with React/Vite (frontend) and Laravel (backend API) with databases.
+- **Company Profile / Portofolio**: Custom profile websites for personal branding or business presentation.
+- **VPS Setup & DevOps Deployment**: Configuring Linux VPS (Ubuntu), Docker containers, Nginx reverse proxy, and Cloudflare Tunnel integration.
+
+## Key Technical Projects
+- **Acentra Service**: Modern service business landing page. Features a cost calculator, custom static SSR prerender for SEO, and auto-deployment via Docker/Nginx/Cloudflare Tunnel on Linux VPS. (Demo: https://acentraservice.com)
+- **Premium Office Booking (Wisma 46 Space)**: Platform for renting premium office spaces. Built with Laravel 11 API, React.js, Midtrans payment gateway, GitHub Actions CI/CD pipeline, Docker containerization, and Grafana monitoring. (Demo: https://w46space.nexvol.xyz/)
+- **Car Service (AutoPro)**: Landing page for automotive workshop. Mobile-first design, WhatsApp booking integration, deployed via Docker, Nginx, and Cloudflare. (Demo: https://autopro.nexvol.xyz/)
+- **Restaurant Franchise Platform**: Multi-page franchise platform. OOP PHP Native, MySQL, GitHub Actions pipeline, and Docker staging setup. (Demo: https://fiverestaurant.nexvol.xyz/)
+
+## Work Experience
+- **Network Operation Center (NOC) Staff** at PT Mitra Teknologi Andalan Utama (July 2025 — July 2026):
+  - Monitored network stability using Polestar, UniFi, and Cisco vManage SD-WAN.
+  - Handled incident troubleshooting, PuTTY/Winbox configurations, and trouble ticket documentation.
+- **Media Social Support** at Media Indonesia (July 2023 — December 2023):
+  - Managed LinkedIn publishing, video studio setups, and camera operation for program streaming.
+
+## Skills Directory
+- **Frontend & Fullstack**: Laravel, React.js, PHP (Native/OOP), Tailwind CSS v4, MySQL.
+- **DevOps & Cloud**: Docker, Linux VPS (Ubuntu), Git, GitHub Actions (CI/CD), Nginx, Cloudflare, Grafana.
+- **NOC & Networking**: SD-WAN vManage, UniFi, Cisco, Winbox (MikroTik), troubleshooting, network monitoring.
+
+## Contacts & Socials
+- **Website**: https://fadlanportofolio.com
+- **WhatsApp**: https://wa.me/6281584350420
+- **GitHub**: https://github.com/fadlanachmad
+- **LinkedIn**: https://www.linkedin.com/in/fadlan-achmad-frizal

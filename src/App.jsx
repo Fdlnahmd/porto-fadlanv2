@@ -16,8 +16,21 @@ import Projects from './sections/Projects';
 import Experience from './sections/Experience';
 import Contact from './sections/Contact';
 
+import NotFound from './components/NotFound';
+
 function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [is404, setIs404] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      return path !== '/' && path !== '/index.html';
+    }
+    return false;
+  });
+
+  if (is404) {
+    return <NotFound />;
+  }
 
   // Monitor scroll for custom progress bar
   useEffect(() => {
