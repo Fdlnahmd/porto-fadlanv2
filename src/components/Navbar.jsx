@@ -109,7 +109,7 @@ const Navbar = () => {
             className="flex items-center gap-2.5 group"
           >
             <img 
-              src="/favicon.png" 
+              src="/favicon.ico" 
               alt="Fadlan Logo"
               className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
             />
