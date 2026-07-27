@@ -235,8 +235,8 @@ const Hero = () => {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1.5 cursor-pointer"
         onClick={() => handleScrollToSection('#about')}
       >
-        <span className="text-[10px] text-gray-500 uppercase tracking-widest">Scroll Down</span>
-        <div className="w-5 h-8 rounded-full border border-gray-600 flex justify-center p-1.5">
+        <span className="text-[10px] text-gray-400 uppercase tracking-widest">Scroll Down</span>
+        <div className="w-5 h-8 rounded-full border border-gray-500 flex justify-center p-1.5">
           <div className="w-1 h-2 rounded-full bg-accent-indigo animate-[bounce_1.5s_infinite]" />
         </div>
       </motion.div>
