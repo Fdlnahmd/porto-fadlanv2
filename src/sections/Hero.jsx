@@ -49,6 +49,9 @@ const GrafanaDashboardCard = () => {
           <img
             src={grafanaDashboard}
             alt="Grafana Dashboard nexvol.xyz — real container monitoring"
+            width={960}
+            height={526}
+            fetchPriority="high"
             className="w-full object-cover object-top"
           />
           {/* Subtle overlay gradient at bottom for a clean fade */}

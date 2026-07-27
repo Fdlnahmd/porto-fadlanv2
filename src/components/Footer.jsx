@@ -23,7 +23,7 @@ const Footer = () => {
           <div className="font-display text-lg font-bold text-white tracking-tight">
           Fadlan<span className="text-accent-indigo">.</span>
           </div>
-          <p className="text-gray-500 text-xs mt-1">
+          <p className="text-gray-400 text-xs mt-1">
             Web Developer & NOC — Jakarta Barat.
           </p>
         </div>
@@ -88,7 +88,7 @@ const Footer = () => {
         </button>
       </div>
 
-      <div className="max-w-6xl mx-auto text-center border-t border-white/5 pt-6 mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+      <div className="max-w-6xl mx-auto text-center border-t border-white/5 pt-6 mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400">
         <div>
           &copy; {currentYear} Fadlan Achmad Frizal. All rights reserved.
         </div>

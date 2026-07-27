@@ -28,7 +28,7 @@ const About = () => {
             Tentang Saya
           </motion.h2>
         </div>
-        <span className="hidden sm:block font-display text-6xl font-extrabold text-white/[0.02] select-none leading-none">
+        <span aria-hidden="true" className="hidden sm:block font-display text-6xl font-extrabold text-white/[0.02] select-none leading-none">
           ABOUT
         </span>
       </div>

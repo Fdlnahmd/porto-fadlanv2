@@ -131,7 +131,7 @@ const Projects = () => {
             </motion.h2>
           </div>
         </div>
-        <span className="hidden md:block font-display text-6xl font-extrabold text-white/[0.02] select-none leading-none">
+        <span aria-hidden="true" className="hidden md:block font-display text-6xl font-extrabold text-white/[0.02] select-none leading-none">
           WORKS
         </span>
       </div>
